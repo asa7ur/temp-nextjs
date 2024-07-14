@@ -46,9 +46,9 @@ const HomePage = () => {
     <div>
       <h1 className='text-7xl'>HomePage</h1>
     </div>
-  );
-};
-export default HomePage;
+  )
+}
+export default HomePage
 ```
 
 ## Create Pages in Next.js
@@ -66,9 +66,9 @@ const AboutPage = () => {
     <div>
       <h1 className='text-7xl'>AboutPage</h1>
     </div>
-  );
-};
-export default AboutPage;
+  )
+}
+export default AboutPage
 ```
 
 ## Link Component
@@ -78,7 +78,7 @@ export default AboutPage;
   home page
 
 ```js
-import Link from 'next/link';
+import Link from 'next/link'
 
 const HomePage = () => {
   return (
@@ -88,9 +88,9 @@ const HomePage = () => {
         about page
       </Link>
     </div>
-  );
-};
-export default HomePage;
+  )
+}
+export default HomePage
 ```
 
 ## Nested Routes
@@ -100,9 +100,9 @@ export default HomePage;
 
 ```js
 const AboutInfoPage = () => {
-  return <h1 className='text-7xl'>AboutInfoPage</h1>;
-};
-export default AboutInfoPage;
+  return <h1 className='text-7xl'>AboutInfoPage</h1>
+}
+export default AboutInfoPage
 ```
 
 ## Challenge
@@ -147,22 +147,22 @@ module.exports = {
 - layouts in a route are nested by default. Each parent layout wraps child layouts below it using the React children prop.
 
 ```js
-import { Inter } from 'next/font/google';
-import './globals.css';
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Next.js Tutorial',
   description: 'Build awesome stuff with Next.js!',
-};
+}
 
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={inter.className}>{children}</body>
     </html>
-  );
+  )
 }
 ```
 
@@ -181,14 +181,14 @@ export default function RootLayout({ children }) {
 components/Navbar
 
 ```js
-import Link from 'next/link';
+import Link from 'next/link'
 
 const links = [
   { href: '/client', label: 'client' },
   { href: '/drinks', label: 'drinks' },
   { href: '/tasks', label: 'tasks' },
   { href: '/query', label: 'react-query' },
-];
+]
 
 const Navbar = () => {
   return (
@@ -207,32 +207,32 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               </li>
-            );
+            )
           })}
         </ul>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
 ```
 
 app/layout
 
 ```js
-import { Inter } from 'next/font/google';
-import './globals.css';
+import { Inter } from 'next/font/google'
+import './globals.css'
 
 // alias
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbar'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Next.js Tutorial',
   description: 'Build awesome stuff with Next.js!',
-};
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -242,7 +242,7 @@ export default function RootLayout({ children }) {
         <main className='px-8 py-20 max-w-6xl mx-auto '>{children}</main>
       </body>
     </html>
-  );
+  )
 }
 ```
 
@@ -286,7 +286,7 @@ Benefits :
 ### Home Page
 
 ```js
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -296,7 +296,7 @@ export default function Home() {
         get started
       </Link>
     </div>
-  );
+  )
 }
 ```
 
@@ -304,10 +304,10 @@ export default function Home() {
 
 ```js
 // try without
-'use client';
-import { useState } from 'react';
+'use client'
+import { useState } from 'react'
 const Client = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
   return (
     <div>
       <h1 className='text-7xl font-bold mb-4 '>{count}</h1>
@@ -315,9 +315,9 @@ const Client = () => {
         increase
       </button>
     </div>
-  );
-};
-export default Client;
+  )
+}
+export default Client
 ```
 
 ## Fetch Data in Server Components
@@ -327,19 +327,19 @@ export default Client;
 - Next.js extends the native Web fetch() API to allow each request on the server to set its own persistent caching semantics.
 
 ```js
-const url = 'someUrl';
+const url = 'someUrl'
 
 const ServerComponent = async () => {
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(data);
+  const response = await fetch(url)
+  const data = await response.json()
+  console.log(data)
   return (
     <div>
       <h1 className='text-7xl'>DrinksPage</h1>
     </div>
-  );
-};
-export default ServerComponent;
+  )
+}
+export default ServerComponent
 ```
 
 ## Challenge - Fetch Data in Drinks Page
@@ -351,19 +351,19 @@ export default ServerComponent;
 app/drinks/page.js
 
 ```js
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
 
 const DrinksPage = async () => {
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(data);
+  const response = await fetch(url)
+  const data = await response.json()
+  console.log(data)
   return (
     <div>
       <h1 className='text-7xl'>DrinksPage</h1>
     </div>
-  );
-};
-export default DrinksPage;
+  )
+}
+export default DrinksPage
 ```
 
 ## Loading Component
@@ -374,9 +374,9 @@ The special file loading.js helps you create meaningful Loading UI with React Su
 
 ```js
 const loading = () => {
-  return <span className='loading'></span>;
-};
-export default loading;
+  return <span className='loading'></span>
+}
+export default loading
 ```
 
 - refactor drinks page
@@ -384,22 +384,22 @@ export default loading;
 ```js
 const fetchDrinks = async () => {
   // just for demo purposes
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
-};
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  const response = await fetch(url)
+  const data = await response.json()
+  return data
+}
 
 const DrinksPage = async () => {
-  const data = await fetchDrinks();
-  console.log(data);
+  const data = await fetchDrinks()
+  console.log(data)
   return (
     <div>
       <h1 className='text-7xl'>DrinksPage</h1>
     </div>
-  );
-};
-export default DrinksPage;
+  )
+}
+export default DrinksPage
 ```
 
 ## Error Component
@@ -410,30 +410,30 @@ The error.js file convention allows you to gracefully handle unexpected runtime 
 - 'use client'
 
 ```js
-'use client';
+'use client'
 const error = () => {
-  return <div>there was an error...</div>;
-};
-export default error;
+  return <div>there was an error...</div>
+}
+export default error
 ```
 
 - refactor drinks (optional)
 
 ```js
 // modify the url
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.phps?f=a';
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.phps?f=a'
 
 const fetchDrinks = async () => {
   // just for demo purposes
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  const response = await fetch(url);
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  const response = await fetch(url)
   // throw error
   if (!response.ok) {
-    throw new Error('Failed to fetch drinks...');
+    throw new Error('Failed to fetch drinks...')
   }
-  const data = await response.json();
-  return data;
-};
+  const data = await response.json()
+  return data
+}
 ```
 
 - DON'T FORGET TO FIX THE URL 😜😜😜
@@ -459,7 +459,7 @@ export default function DrinksLayout({ children }) {
       </div>
       {children}
     </div>
-  );
+  )
 }
 ```
 
@@ -469,15 +469,15 @@ export default function DrinksLayout({ children }) {
 
 ```js
 const page = ({ params }) => {
-  console.log(params);
+  console.log(params)
 
   return (
     <div>
       <h1 className='text-7xl'>{params.id}</h1>
     </div>
-  );
-};
-export default page;
+  )
+}
+export default page
 ```
 
 ## Challenge - Drinks List
@@ -494,7 +494,7 @@ export default page;
 DrinksList.jsx
 
 ```js
-import Link from 'next/link';
+import Link from 'next/link'
 
 const DrinksList = ({ drinks }) => {
   return (
@@ -510,38 +510,38 @@ const DrinksList = ({ drinks }) => {
         </li>
       ))}
     </ul>
-  );
-};
-export default DrinksList;
+  )
+}
+export default DrinksList
 ```
 
 app/drinks/page.js
 
 ```js
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
-import DrinksList from '@/components/DrinksList';
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
+import DrinksList from '@/components/DrinksList'
 const fetchDrinks = async () => {
   // just for demo purposes
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  const response = await fetch(url);
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  const response = await fetch(url)
 
   if (!response.ok) {
-    throw new Error('Failed to fetch drinks...');
+    throw new Error('Failed to fetch drinks...')
   }
-  const data = await response.json();
-  return data;
-};
+  const data = await response.json()
+  return data
+}
 
 const DrinksPage = async () => {
-  const data = await fetchDrinks();
+  const data = await fetchDrinks()
 
   return (
     <div>
       <DrinksList drinks={data.drinks} />
     </div>
-  );
-};
-export default DrinksPage;
+  )
+}
+export default DrinksPage
 ```
 
 ## Challenge - Render Single Drink
@@ -550,7 +550,7 @@ export default DrinksPage;
 - hint:params object
 
 ```js
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 ```
 
 ## Render Single Drink
@@ -558,22 +558,22 @@ const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 drinks/[id]/page.js
 
 ```js
-import Link from 'next/link';
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+import Link from 'next/link'
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
 const getSingleDrink = async (id) => {
-  const res = await fetch(`${url}${id}`);
+  const res = await fetch(`${url}${id}`)
 
   if (!res.ok) {
-    throw new Error('Failed to fetch drink...');
+    throw new Error('Failed to fetch drink...')
   }
-  return res.json();
-};
+  return res.json()
+}
 
 const SingleDrink = async ({ params }) => {
-  const data = await getSingleDrink(params.id);
-  const title = data?.drinks[0]?.strDrink;
-  const imgSrc = data?.drinks[0]?.strDrinkThumb;
+  const data = await getSingleDrink(params.id)
+  const title = data?.drinks[0]?.strDrink
+  const imgSrc = data?.drinks[0]?.strDrinkThumb
   return (
     <div>
       <Link href='/drinks' className='btn btn-primary mt-8 mb-12'>
@@ -581,9 +581,9 @@ const SingleDrink = async ({ params }) => {
       </Link>
       <h1 className='text-4xl mb-8'>{title}</h1>
     </div>
-  );
-};
-export default SingleDrink;
+  )
+}
+export default SingleDrink
 ```
 
 ## Next Image Component
@@ -601,16 +601,16 @@ The Next.js Image component extends the HTML <img> element with features for aut
 drinks[id]/page.js
 
 ```js
-import Link from 'next/link';
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+import Link from 'next/link'
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
-import drinkImg from './drink.jpg';
-import Image from 'next/image';
+import drinkImg from './drink.jpg'
+import Image from 'next/image'
 
 const SingleDrink = async ({ params }) => {
-  const data = await getSingleDrink(params.id);
-  const title = data?.drinks[0]?.strDrink;
-  const imgSrc = data?.drinks[0]?.strDrinkThumb;
+  const data = await getSingleDrink(params.id)
+  const title = data?.drinks[0]?.strDrink
+  const imgSrc = data?.drinks[0]?.strDrinkThumb
   return (
     <div>
       <Link href='/drinks' className='btn btn-primary mt-8 mb-12'>
@@ -620,9 +620,9 @@ const SingleDrink = async ({ params }) => {
       <Image src={drinkImg} className='w-48 h-48 rounded' alt='' />
       <h1 className='text-4xl mb-8'>{title}</h1>
     </div>
-  );
-};
-export default SingleDrink;
+  )
+}
+export default SingleDrink
 ```
 
 ## Remote Images
@@ -641,9 +641,9 @@ export default SingleDrink;
 
 ```js
 const SingleDrink = async ({ params }) => {
-  const data = await getSingleDrink(params.id);
-  const title = data?.drinks[0]?.strDrink;
-  const imgSrc = data?.drinks[0]?.strDrinkThumb;
+  const data = await getSingleDrink(params.id)
+  const title = data?.drinks[0]?.strDrink
+  const imgSrc = data?.drinks[0]?.strDrinkThumb
   return (
     <div>
       <Link href='/drinks' className='btn btn-primary mt-8 mb-12'>
@@ -661,9 +661,9 @@ const SingleDrink = async ({ params }) => {
       />
       <h1 className='text-4xl mb-8'>{title}</h1>
     </div>
-  );
-};
-export default SingleDrink;
+  )
+}
+export default SingleDrink
 ```
 
 ```js
@@ -692,8 +692,8 @@ module.exports = nextConfig;
   DrinksList.jsx
 
 ```js
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 
 const DrinksList = ({ drinks }) => {
   return (
@@ -718,9 +718,9 @@ const DrinksList = ({ drinks }) => {
         </li>
       ))}
     </ul>
-  );
-};
-export default DrinksList;
+  )
+}
+export default DrinksList
 ```
 
 ## More Routing
@@ -743,10 +743,10 @@ export default DrinksList;
 
 ```js
 const SignInPage = ({ params }) => {
-  console.log(params);
-  return <div>SignInPage</div>;
-};
-export default SignInPage;
+  console.log(params)
+  return <div>SignInPage</div>
+}
+export default SignInPage
 ```
 
 - create app/(dashboard)/auth/[...sign-in]
@@ -790,7 +790,7 @@ datasource db {
 .env
 
 ```js
-DATABASE_URL = 'file:./dev.db';
+DATABASE_URL = 'file:./dev.db'
 ```
 
 ## Setup Instance
@@ -868,25 +868,25 @@ In Prisma, the term "model" refers to an abstraction that maps to a table in you
 - fix the links the navbar
 
 ```js
-import prisma from '@/utils/db';
+import prisma from '@/utils/db'
 
 const prismaHandlers = async () => {
   await prisma.task.create({
     data: {
       content: 'wake up',
     },
-  });
+  })
   const allTasks = await prisma.task.findMany({
     orderBy: {
       createdAt: 'desc',
     },
-  });
+  })
 
-  return allTasks;
-};
+  return allTasks
+}
 
 const Prisma = async () => {
-  const tasks = await prismaHandlers();
+  const tasks = await prismaHandlers()
   return (
     <div>
       <h1 className='text-3xl font-medium mb-4'>Prisma Example </h1>
@@ -895,12 +895,12 @@ const Prisma = async () => {
           <h2 key={task.id} className='text-xl py-2'>
             😬 {task.content}
           </h2>
-        );
+        )
       })}
     </div>
-  );
-};
-export default Prisma;
+  )
+}
+export default Prisma
 ```
 
 ## Optional - Prisma Crud
@@ -914,13 +914,13 @@ const task = await prisma.task.create({
   data: {
     content: 'some task',
   },
-});
+})
 ```
 
 - Get All Records
 
 ```js
-const tasks = await prisma.task.findMany();
+const tasks = await prisma.task.findMany()
 ```
 
 - Get record by ID or unique identifier
@@ -931,14 +931,14 @@ const user = await prisma.user.findUnique({
   where: {
     email: 'elsa@prisma.io',
   },
-});
+})
 
 // By ID
 const task = await prisma.task.findUnique({
   where: {
     id: id,
   },
-});
+})
 ```
 
 - Update Record
@@ -951,7 +951,7 @@ const updateTask = await prisma.task.update({
   data: {
     content: 'updated task',
   },
-});
+})
 ```
 
 - Update or create records
@@ -967,7 +967,7 @@ const upsertTask = await prisma.task.upsert({
   create: {
     content: 'some value',
   },
-});
+})
 ```
 
 - Delete a single record
@@ -977,7 +977,7 @@ const deleteTask = await prisma.task.delete({
   where: {
     id: id,
   },
-});
+})
 ```
 
 ## Challenge - Display Tasks
@@ -992,8 +992,8 @@ const deleteTask = await prisma.task.delete({
 tasks/page.js
 
 ```js
-import TaskForm from '@/components/TaskForm';
-import TaskList from '@/components/TaskList';
+import TaskForm from '@/components/TaskForm'
+import TaskList from '@/components/TaskList'
 
 const TasksPage = () => {
   return (
@@ -1001,26 +1001,26 @@ const TasksPage = () => {
       <TaskForm />
       <TaskList />
     </div>
-  );
-};
-export default TasksPage;
+  )
+}
+export default TasksPage
 ```
 
 components/TaskList
 
 ```js
-import prisma from '@/utils/db';
-import Link from 'next/link';
-import DeleteForm from './DeleteForm';
+import prisma from '@/utils/db'
+import Link from 'next/link'
+import DeleteForm from './DeleteForm'
 
 const TaskList = async () => {
   const tasks = await prisma.task.findMany({
     orderBy: {
       createdAt: 'desc',
     },
-  });
+  })
   if (tasks.length === 0)
-    return <h2 className='mt-8 font-medium text-lg'>No tasks to show</h2>;
+    return <h2 className='mt-8 font-medium text-lg'>No tasks to show</h2>
   return (
     <ul className='mt-8'>
       {tasks.map((task) => (
@@ -1044,9 +1044,9 @@ const TaskList = async () => {
         </li>
       ))}
     </ul>
-  );
-};
-export default TaskList;
+  )
+}
+export default TaskList
 ```
 
 ## Server Actions
@@ -1070,14 +1070,14 @@ Rules :
 ```js
 export default function ServerComponent() {
   async function myAction(formData) {
-    'use server';
+    'use server'
     // access input values with formData
     // formData.get('name')
     // mutate data (server)
     // revalidate cache
   }
 
-  return <form action={myAction}>...</form>;
+  return <form action={myAction}>...</form>
 }
 ```
 
@@ -1087,7 +1087,7 @@ export default function ServerComponent() {
 utils/actions.js
 
 ```js
-'use server';
+'use server'
 
 export async function myAction() {
   // ...
@@ -1095,38 +1095,38 @@ export async function myAction() {
 ```
 
 ```js
-'use client';
+'use client'
 
-import { myAction } from './actions';
+import { myAction } from './actions'
 
 export default function ClientComponent() {
   return (
     <form action={myAction}>
       <button type='submit'>Add to Cart</button>
     </form>
-  );
+  )
 }
 ```
 
 ## TaskForm
 
 ```js
-import prisma from '@/utils/db';
-import { revalidatePath } from 'next/cache';
+import prisma from '@/utils/db'
+import { revalidatePath } from 'next/cache'
 
 const createTask = async (formData) => {
-  'use server';
-  const content = formData.get('content');
+  'use server'
+  const content = formData.get('content')
   // some validation here
 
   await prisma.task.create({
     data: {
       content,
     },
-  });
+  })
   // revalidate path
-  revalidatePath('/tasks');
-};
+  revalidatePath('/tasks')
+}
 
 const TaskForm = () => {
   return (
@@ -1144,9 +1144,9 @@ const TaskForm = () => {
         </button>
       </div>
     </form>
-  );
-};
-export default TaskForm;
+  )
+}
+export default TaskForm
 ```
 
 ## Refactor
@@ -1156,31 +1156,31 @@ export default TaskForm;
 - refactor TaskForm and TaskList
 
 ```js
-'use server';
+'use server'
 
-import prisma from '@/utils/db';
-import { revalidatePath } from 'next/cache';
+import prisma from '@/utils/db'
+import { revalidatePath } from 'next/cache'
 
 export const getAllTasks = async () => {
   return prisma.task.findMany({
     orderBy: {
       createdAt: 'desc',
     },
-  });
-};
+  })
+}
 
 export const createTask = async (formData) => {
-  const content = formData.get('content');
+  const content = formData.get('content')
   // some validation here
 
   await prisma.task.create({
     data: {
       content,
     },
-  });
+  })
   // revalidate path
-  revalidatePath('/tasks');
-};
+  revalidatePath('/tasks')
+}
 ```
 
 ## DeleteForm
@@ -1189,7 +1189,7 @@ export const createTask = async (formData) => {
 - invoke by using startTransition (useTransition hook)
 
 ```js
-import { deleteTask } from '@/utils/actions';
+import { deleteTask } from '@/utils/actions'
 
 const DeleteForm = ({ id }) => {
   return (
@@ -1197,19 +1197,19 @@ const DeleteForm = ({ id }) => {
       <input type='hidden' name='id' value={id} />
       <button className='btn btn-error btn-xs'>delete</button>
     </form>
-  );
-};
-export default DeleteForm;
+  )
+}
+export default DeleteForm
 ```
 
 utils/actions
 
 ```js
 export const deleteTask = async (formData) => {
-  const id = formData.get('id');
-  await prisma.task.delete({ where: { id } });
-  revalidatePath('/tasks');
-};
+  const id = formData.get('id')
+  await prisma.task.delete({ where: { id } })
+  revalidatePath('/tasks')
+}
 ```
 
 ## Challenge - Edit Task
@@ -1227,11 +1227,11 @@ export const deleteTask = async (formData) => {
 tasks/[id]/page.js
 
 ```js
-import EditForm from '@/components/EditForm';
-import { getTask } from '@/utils/actions';
-import Link from 'next/link';
+import EditForm from '@/components/EditForm'
+import { getTask } from '@/utils/actions'
+import Link from 'next/link'
 const TaskPage = async ({ params }) => {
-  const task = await getTask(params.id);
+  const task = await getTask(params.id)
 
   return (
     <>
@@ -1242,9 +1242,9 @@ const TaskPage = async ({ params }) => {
       </div>
       <EditForm task={task} />
     </>
-  );
-};
-export default TaskPage;
+  )
+}
+export default TaskPage
 ```
 
 actions
@@ -1255,13 +1255,13 @@ export const getTask = async (id) => {
     where: {
       id,
     },
-  });
-};
+  })
+}
 
 export const editTask = async (formData) => {
-  const id = formData.get('id');
-  const content = formData.get('content');
-  const completed = formData.get('completed');
+  const id = formData.get('id')
+  const content = formData.get('content')
+  const completed = formData.get('completed')
 
   await prisma.task.update({
     where: {
@@ -1271,21 +1271,21 @@ export const editTask = async (formData) => {
       content: content,
       completed: completed === 'on' ? true : false,
     },
-  });
+  })
   // redirect won't works unless the component has 'use client'
   // another option, setup the editTask in the component directly
-  redirect('/tasks');
-};
+  redirect('/tasks')
+}
 ```
 
 EditForm.js
 
 ```js
-'use client';
-import { editTask } from '@/utils/actions';
+'use client'
+import { editTask } from '@/utils/actions'
 
 const EditForm = ({ task }) => {
-  const { id, completed, content } = task;
+  const { id, completed, content } = task
   return (
     <form
       action={editTask}
@@ -1316,9 +1316,9 @@ const EditForm = ({ task }) => {
       </div>
       <button className='btn btn-primary btn-block btn-sm'>edit</button>
     </form>
-  );
-};
-export default EditForm;
+  )
+}
+export default EditForm
 ```
 
 ## Server Actions - Loading State, Response, Errors
@@ -1334,15 +1334,15 @@ export default EditForm;
 TaskFormCustom
 
 ```js
-'use client';
+'use client'
 
-import { createTaskCustom } from '@/utils/actions';
-import { useFormStatus } from 'react-dom';
+import { createTaskCustom } from '@/utils/actions'
+import { useFormStatus } from 'react-dom'
 // The useFormStatus Hook provides status information of the last form submission.
 // useFormState is a Hook that allows you to update state based on the result of a form action.
 
 const SubmitButton = () => {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus()
 
   return (
     <button
@@ -1352,8 +1352,8 @@ const SubmitButton = () => {
     >
       {pending ? 'please wait... ' : 'create task'}
     </button>
-  );
-};
+  )
+}
 
 const TaskForm = () => {
   return (
@@ -1369,25 +1369,25 @@ const TaskForm = () => {
         <SubmitButton />
       </div>
     </form>
-  );
-};
-export default TaskForm;
+  )
+}
+export default TaskForm
 ```
 
 ```js
 export const createTaskCustom = async (formData) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  const content = formData.get('content');
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+  const content = formData.get('content')
   // some validation here
 
   await prisma.task.create({
     data: {
       content,
     },
-  });
+  })
   // revalidate path
-  revalidatePath('/tasks');
-};
+  revalidatePath('/tasks')
+}
 ```
 
 ## Error Handling and Response To User
@@ -1395,15 +1395,15 @@ export const createTaskCustom = async (formData) => {
 TaskFormCustom.jsx
 
 ```js
-'use client';
+'use client'
 
-import { createTaskCustom } from '@/utils/actions';
-import { useFormStatus, useFormState } from 'react-dom';
+import { createTaskCustom } from '@/utils/actions'
+import { useFormStatus, useFormState } from 'react-dom'
 // The useFormStatus Hook provides status information of the last form submission.
 // useFormState is a Hook that allows you to update state based on the result of a form action.
 
 const SubmitButton = () => {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus()
 
   return (
     <button
@@ -1413,15 +1413,15 @@ const SubmitButton = () => {
     >
       {pending ? 'please wait... ' : 'create task'}
     </button>
-  );
-};
+  )
+}
 
 const initialState = {
   message: null,
-};
+}
 
 const TaskForm = () => {
-  const [state, formAction] = useFormState(createTaskCustom, initialState);
+  const [state, formAction] = useFormState(createTaskCustom, initialState)
 
   return (
     <form action={formAction}>
@@ -1437,9 +1437,9 @@ const TaskForm = () => {
         <SubmitButton />
       </div>
     </form>
-  );
-};
-export default TaskForm;
+  )
+}
+export default TaskForm
 ```
 
 actions.js
@@ -1447,23 +1447,23 @@ actions.js
 ```js
 // fix params
 export const createTaskCustom = async (prevState, formData) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  const content = formData.get('content');
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+  const content = formData.get('content')
   // some validation here
   try {
     await prisma.task.create({
       data: {
         content,
       },
-    });
+    })
     // revalidate path
-    revalidatePath('/tasks');
-    return { message: 'success!!!' };
+    revalidatePath('/tasks')
+    return { message: 'success!!!' }
   } catch (error) {
     // can't return error
-    return { message: 'error...' };
+    return { message: 'error...' }
   }
-};
+}
 ```
 
 ## Extra - More User Input Validation Options
@@ -1482,35 +1482,35 @@ npm install zod
 actions.js
 
 ```js
-import { z } from 'zod';
+import { z } from 'zod'
 
 export const createTaskCustom = async (prevState, formData) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  const content = formData.get('content');
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+  const content = formData.get('content')
 
   const Task = z.object({
     content: z.string().min(5),
-  });
+  })
 
   // some validation here
   try {
     Task.parse({
       content,
-    });
+    })
     await prisma.task.create({
       data: {
         content,
       },
-    });
+    })
     // revalidate path
-    revalidatePath('/tasks');
-    return { message: 'success!!!' };
+    revalidatePath('/tasks')
+    return { message: 'success!!!' }
   } catch (error) {
-    console.log(error);
+    console.log(error)
     // can't return error
-    return { message: 'error...' };
+    return { message: 'error...' }
   }
-};
+}
 ```
 
 ## Providers
@@ -1524,8 +1524,8 @@ npm install react-hot-toast
 - create providers.js file in app
 
 ```js
-'use client';
-import { Toaster } from 'react-hot-toast';
+'use client'
+import { Toaster } from 'react-hot-toast'
 
 const Providers = ({ children }) => {
   return (
@@ -1533,15 +1533,15 @@ const Providers = ({ children }) => {
       <Toaster />
       {children}
     </>
-  );
-};
-export default Providers;
+  )
+}
+export default Providers
 ```
 
 layout.js
 
 ```js
-import Providers from './providers';
+import Providers from './providers'
 
 export default function RootLayout({ children }) {
   return (
@@ -1553,7 +1553,7 @@ export default function RootLayout({ children }) {
         </main>
       </body>
     </html>
-  );
+  )
 }
 ```
 
@@ -1561,10 +1561,10 @@ export default function RootLayout({ children }) {
 
 ```js
 try {
-  return { message: 'success' };
+  return { message: 'success' }
 } catch (error) {
-  console.log(error);
-  return { message: 'error' };
+  console.log(error)
+  return { message: 'error' }
 }
 ```
 
@@ -1573,14 +1573,14 @@ try {
 TaskFormCustom.jsx
 
 ```js
-'use client';
-import { createTaskCustom } from '@/utils/actions';
-import { useEffect } from 'react';
+'use client'
+import { createTaskCustom } from '@/utils/actions'
+import { useEffect } from 'react'
 
-import { useFormStatus, useFormState } from 'react-dom';
-import toast from 'react-hot-toast';
+import { useFormStatus, useFormState } from 'react-dom'
+import toast from 'react-hot-toast'
 const SubmitBtn = () => {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus()
   return (
     <button
       type='submit'
@@ -1589,25 +1589,25 @@ const SubmitBtn = () => {
     >
       {pending ? 'please wait...' : 'create task'}
     </button>
-  );
-};
+  )
+}
 
 const initialState = {
   message: null,
-};
+}
 
 const TaskForm = () => {
-  const [state, formAction] = useFormState(createTaskCustom, initialState);
+  const [state, formAction] = useFormState(createTaskCustom, initialState)
 
   useEffect(() => {
     if (state.message === 'error') {
-      toast.error('there was an error');
-      return;
+      toast.error('there was an error')
+      return
     }
     if (state.message) {
-      toast.success('task created....');
+      toast.success('task created....')
     }
-  }, [state]);
+  }, [state])
 
   return (
     <form action={formAction}>
@@ -1622,9 +1622,9 @@ const TaskForm = () => {
         <SubmitBtn />
       </div>
     </form>
-  );
-};
-export default TaskForm;
+  )
+}
+export default TaskForm
 ```
 
 ## Challenge - Add Functionality
@@ -1632,18 +1632,18 @@ export default TaskForm;
 DeleteForm.jsx
 
 ```js
-'use client';
-import { useFormStatus } from 'react-dom';
-import { deleteTask } from '@/utils/actions';
+'use client'
+import { useFormStatus } from 'react-dom'
+import { deleteTask } from '@/utils/actions'
 
 const SubmitBtn = () => {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus()
   return (
     <button type='submit' className='btn btn-xs btn-error' disabled={pending}>
       {pending ? 'pending...' : 'delete'}
     </button>
-  );
-};
+  )
+}
 
 const DeleteForm = ({ id }) => {
   return (
@@ -1651,9 +1651,9 @@ const DeleteForm = ({ id }) => {
       <input type='hidden' name='id' value={id} />
       <SubmitBtn />
     </form>
-  );
-};
-export default DeleteForm;
+  )
+}
+export default DeleteForm
 ```
 
 ## Route Handlers
@@ -1674,24 +1674,24 @@ app/api/tasks/route.js
 ```js
 // the following HTTP methods are supported: GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS. If an unsupported method is called, Next.js will return a 405 Method Not Allowed response.
 
-import { NextResponse } from 'next/server';
-import db from '@/utils/db';
+import { NextResponse } from 'next/server'
+import db from '@/utils/db'
 
 export const GET = async (request) => {
-  const tasks = await db.task.findMany();
-  return Response.json({ data: tasks });
+  const tasks = await db.task.findMany()
+  return Response.json({ data: tasks })
   // return NextResponse.json({ data: tasks });
-};
+}
 
 export const POST = async (request) => {
-  const data = await request.json();
+  const data = await request.json()
   const task = await db.task.create({
     data: {
       content: data.content,
     },
-  });
-  return NextResponse.json({ data: task });
-};
+  })
+  return NextResponse.json({ data: task })
+}
 ```
 
 ## Middleware
@@ -1705,26 +1705,26 @@ Middleware in Next.js is a piece of code that allows you to perform actions befo
 
 ```js
 export function middleware(request) {
-  return Response.json({ msg: 'hello there' });
+  return Response.json({ msg: 'hello there' })
 }
 
 export const config = {
   matcher: '/about',
-};
+}
 ```
 
 ```js
-import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request) {
-  return NextResponse.redirect(new URL('/', request.url));
+  return NextResponse.redirect(new URL('/', request.url))
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: ['/about/:path*', '/tasks/:path*'],
-};
+}
 ```
 
 ## PlanetScale
@@ -1761,22 +1761,22 @@ package.json
 - prisma-example
 
 ```js
-import prisma from '@/utils/db';
+import prisma from '@/utils/db'
 
 const prismaHandlers = async () => {
-  console.log('prisma example');
+  console.log('prisma example')
   // await prisma.task.create({
   //   data: {
   //     content: 'wake up',
   //   },
   // });
-  return prisma.task.findMany();
-};
+  return prisma.task.findMany()
+}
 
 const PrismaExample = async () => {
-  const tasks = await prismaHandlers();
+  const tasks = await prismaHandlers()
   if (tasks.length === 0) {
-    return <h2 className='mt-8 font-medium text-lg'>No tasks to show...</h2>;
+    return <h2 className='mt-8 font-medium text-lg'>No tasks to show...</h2>
   }
 
   return (
@@ -1787,12 +1787,12 @@ const PrismaExample = async () => {
           <h2 key={task.id} className='text-xl py-2'>
             😬 {task.content}
           </h2>
-        );
+        )
       })}
     </div>
-  );
-};
-export default PrismaExample;
+  )
+}
+export default PrismaExample
 ```
 
 - clean out the DB
@@ -1812,7 +1812,7 @@ npm start
 tasks.js
 
 ```js
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'
 ```
 
 ## Deploy
