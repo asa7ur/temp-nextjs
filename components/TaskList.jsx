@@ -29,7 +29,7 @@ const TaskList = async () => {
                 href={`/tasks/${task.id}`}
                 className='btn btn-accent btn-xs'
               >
-                EDIT
+                Edit
               </Link>
               <DeleteForm id={task.id} />
             </div>
